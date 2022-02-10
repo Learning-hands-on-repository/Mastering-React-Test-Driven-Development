@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Appointment, AppointmentsDayView } from "../src/Appointment";
+import { Appointment, AppointmentsDayView } from "../src/AppointmentsDayView";
 import ReactTestUtils from "react-dom/test-utils";
 
 describe("Appointment", () => {
@@ -37,8 +37,8 @@ describe("AppointmentsDayView", () => {
     container = document.createElement("div");
     const today = new Date();
     appointments = [
-      { startAt: today.setHours(12, 0), customer: { firstName: "Nara" } },
-      { startAt: today.setHours(13, 0), customer: { firstName: "Sarisa" } },
+      { startsAt: today.setHours(12, 0), customer: { firstName: "Nara" } },
+      { startsAt: today.setHours(13, 0), customer: { firstName: "Sarisa" } },
     ];
   });
 
