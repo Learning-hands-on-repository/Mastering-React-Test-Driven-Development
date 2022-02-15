@@ -71,7 +71,7 @@ describe("CustomerForm", () => {
       );
 
       await ReactTestUtils.Simulate.change(field(fieldName), {
-        target: { value: newValue },
+        target: { value: newValue, name: fieldName },
       });
       await ReactTestUtils.Simulate.submit(form("customer"));
     });
@@ -86,5 +86,22 @@ describe("CustomerForm", () => {
     itAssignAnIdThatMatchLabelId("firstName", "firstName");
     itSaveExistingValueWhenSubmit("firstName");
     itSaveNewValueWhenSubmit("firstName", "Nara-newvalue");
+  });
+
+  describe("last name field", () => {
+    itRendersAsATextBox("lastName");
+    itIncludesTheExistingValue("lastName", "Nara");
+    itRendersALabel("lastName", "Last Name");
+    itAssignAnIdThatMatchLabelId("lastName", "lastName");
+    itSaveExistingValueWhenSubmit("lastName");
+    itSaveNewValueWhenSubmit("lastName", "Nara-newvalue");
+  });
+  describe("phone field", () => {
+    itRendersAsATextBox("phone");
+    itIncludesTheExistingValue("phone", "012345");
+    itRendersALabel("phone", "phone");
+    itAssignAnIdThatMatchLabelId("phone", "phone");
+    itSaveExistingValueWhenSubmit("phone");
+    itSaveNewValueWhenSubmit("phone", "67890");
   });
 });
