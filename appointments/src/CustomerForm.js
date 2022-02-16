@@ -33,6 +33,7 @@ export const CustomerForm = ({ firstName, lastName, phone, onSubmit }) => {
         id="phone"
         onChange={handleChangeFirstName}
       />
+      <input type="submit" value="Add" />
     </form>
   );
 };
